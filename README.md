@@ -21,10 +21,10 @@ sudo losetup --find --show --partscan crankkos-linxdotrk3566-1.0.0.img
 lsblk /dev/loop0
 mkdir -p ~/mnt/img_p2
 sudo mount -o rw /dev/loop0p2 ~/mnt/img_p2
-~/mnt/img_p2
+cd ~/mnt/img_p2
 ```
 
-3. Replace the existing `./etc/docker-compose.yml` with the following. Customize the region if needed (can be changed later via the `/data/opt/packet_forwarder/configs/` config)
+3. Replace the existing `./etc/docker-compose.yml` with the following. Customize the region if needed (can be changed later via the `/data/opt/packet_forwarder/configs/` config). Other regions include US915 for North America and AU915 for Australia. This yaml file can be modified to have any docker container out of the box as these are not mandatory for the functioning of the system.
 ```yml
 version: '3'
 services:
@@ -68,7 +68,7 @@ chmod +x ./opt/packet_forwarder/tools/reset_lgw.sh.linxdot
 
 6. Set the default root password to to `crankk`. I have generated a shadow file with this
 ```
-echo "root:$1$rC7EtsDo$G9Thoj1.V4GjpNLYmuIRM.:::::::" > ./usr/share/dataskel/etc/shadow
+echo 'root:$1$rC7EtsDo$G9Thoj1.V4GjpNLYmuIRM.:::::::' > ./usr/share/dataskel/etc/shadow
 ```
 
 7. Clean up the crontab
