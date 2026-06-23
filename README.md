@@ -24,7 +24,7 @@ sudo mount -o rw /dev/loop0p2 ~/mnt/img_p2
 cd ~/mnt/img_p2
 ```
 
-3. Replace the existing `./etc/docker-compose.yml` with the following. Customize the region if needed (can be changed later via the `/data/opt/packet_forwarder/configs/` config). Other regions include US915 for North America and AU915 for Australia. This yaml file can be modified to have any docker container out of the box as these are not mandatory for the functioning of the system.
+3. Replace the existing `./etc/docker-compose.yml` with the following. Customize the region if needed (can be changed later via the `/data/opt/packet_forwarder/configs/` config). Other regions include US915 for North America and AU915 for Australia. This YAML file can be modified to have any docker container out of the box as these are not mandatory for the functioning of the system.
 ```yml
 version: '3'
 services:
